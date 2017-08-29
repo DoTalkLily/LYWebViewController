@@ -1,0 +1,408 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		14007C211F55C6C00095B106 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14007C1D1F55C6C00095B106 /* AppDelegate.m */; };
+		14007C221F55C6C00095B106 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14007C1E1F55C6C00095B106 /* Info.plist */; };
+		14007C231F55C6C00095B106 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14007C201F55C6C00095B106 /* TableViewController.m */; };
+		14007C251F55C6DA0095B106 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14007C241F55C6DA0095B106 /* main.m */; };
+		14007C271F55C6FA0095B106 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14007C261F55C6FA0095B106 /* Assets.xcassets */; };
+		14007C2C1F55C97B0095B106 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14007C281F55C97B0095B106 /* LaunchScreen.storyboard */; };
+		14007C2D1F55C97B0095B106 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14007C2A1F55C97B0095B106 /* Main.storyboard */; };
+		423E432091D16570F329F9A9 /* libPods-LYWebViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 862A3F73F7366D5C45141B91 /* libPods-LYWebViewController.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		14007C1C1F55C6C00095B106 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = LYWebViewController/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		14007C1D1F55C6C00095B106 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = LYWebViewController/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		14007C1E1F55C6C00095B106 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LYWebViewController/Info.plist; sourceTree = SOURCE_ROOT; };
+		14007C1F1F55C6C00095B106 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewController.h; path = LYWebViewController/TableViewController.h; sourceTree = SOURCE_ROOT; };
+		14007C201F55C6C00095B106 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewController.m; path = LYWebViewController/TableViewController.m; sourceTree = SOURCE_ROOT; };
+		14007C241F55C6DA0095B106 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LYWebViewController/main.m; sourceTree = SOURCE_ROOT; };
+		14007C261F55C6FA0095B106 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = LYWebViewController/Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		14007C291F55C97B0095B106 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LYWebViewController/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		14007C2B1F55C97B0095B106 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LYWebViewController/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		1419E0F31F52CCB6000AC3BE /* LYWebViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYWebViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B6C97C8F6755E1B8FC917CD /* Pods-LYWebViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYWebViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYWebViewController/Pods-LYWebViewController.release.xcconfig"; sourceTree = "<group>"; };
+		862A3F73F7366D5C45141B91 /* libPods-LYWebViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LYWebViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89AEC470B1E40C9AFEF8A87B /* libPods-AWEWebViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AWEWebViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A74AF094995867A461EF3CA0 /* Pods-LYWebViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYWebViewController.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LYWebViewController/Pods-LYWebViewController.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1419E0F01F52CCB6000AC3BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				423E432091D16570F329F9A9 /* libPods-LYWebViewController.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1419E0EA1F52CCB6000AC3BE = {
+			isa = PBXGroup;
+			children = (
+				1419E0F51F52CCB6000AC3BE /* LYWebViewController */,
+				1419E0F41F52CCB6000AC3BE /* Products */,
+				408799AEEA8D3579A6F4103B /* Pods */,
+				9FDB53623B850EA9DF662280 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1419E0F41F52CCB6000AC3BE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1419E0F31F52CCB6000AC3BE /* LYWebViewController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1419E0F51F52CCB6000AC3BE /* LYWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				14007C281F55C97B0095B106 /* LaunchScreen.storyboard */,
+				14007C2A1F55C97B0095B106 /* Main.storyboard */,
+				14007C261F55C6FA0095B106 /* Assets.xcassets */,
+				14007C1C1F55C6C00095B106 /* AppDelegate.h */,
+				14007C1D1F55C6C00095B106 /* AppDelegate.m */,
+				14007C1E1F55C6C00095B106 /* Info.plist */,
+				14007C1F1F55C6C00095B106 /* TableViewController.h */,
+				14007C201F55C6C00095B106 /* TableViewController.m */,
+				1419E0F61F52CCB6000AC3BE /* Supporting Files */,
+			);
+			name = LYWebViewController;
+			path = AWEWebViewController;
+			sourceTree = "<group>";
+		};
+		1419E0F61F52CCB6000AC3BE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				14007C241F55C6DA0095B106 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		408799AEEA8D3579A6F4103B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A74AF094995867A461EF3CA0 /* Pods-LYWebViewController.debug.xcconfig */,
+				7B6C97C8F6755E1B8FC917CD /* Pods-LYWebViewController.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9FDB53623B850EA9DF662280 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				89AEC470B1E40C9AFEF8A87B /* libPods-AWEWebViewController.a */,
+				862A3F73F7366D5C45141B91 /* libPods-LYWebViewController.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1419E0F21F52CCB6000AC3BE /* LYWebViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1419E10A1F52CCB6000AC3BE /* Build configuration list for PBXNativeTarget "LYWebViewController" */;
+			buildPhases = (
+				12312451D238C4174E2570DF /* [CP] Check Pods Manifest.lock */,
+				1419E0EF1F52CCB6000AC3BE /* Sources */,
+				1419E0F01F52CCB6000AC3BE /* Frameworks */,
+				1419E0F11F52CCB6000AC3BE /* Resources */,
+				F2093BEAEAB7AA3CC852E850 /* [CP] Embed Pods Frameworks */,
+				88F3EA8DBCEFD024E1FC1D93 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LYWebViewController;
+			productName = AWEWebViewController;
+			productReference = 1419E0F31F52CCB6000AC3BE /* LYWebViewController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1419E0EB1F52CCB6000AC3BE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = 01;
+				TargetAttributes = {
+					1419E0F21F52CCB6000AC3BE = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = XXHND5J98K;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1419E0EE1F52CCB6000AC3BE /* Build configuration list for PBXProject "LYWebViewController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1419E0EA1F52CCB6000AC3BE;
+			productRefGroup = 1419E0F41F52CCB6000AC3BE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1419E0F21F52CCB6000AC3BE /* LYWebViewController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1419E0F11F52CCB6000AC3BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14007C2C1F55C97B0095B106 /* LaunchScreen.storyboard in Resources */,
+				14007C221F55C6C00095B106 /* Info.plist in Resources */,
+				14007C271F55C6FA0095B106 /* Assets.xcassets in Resources */,
+				14007C2D1F55C97B0095B106 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		12312451D238C4174E2570DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		88F3EA8DBCEFD024E1FC1D93 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYWebViewController/Pods-LYWebViewController-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2093BEAEAB7AA3CC852E850 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LYWebViewController/Pods-LYWebViewController-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1419E0EF1F52CCB6000AC3BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				14007C211F55C6C00095B106 /* AppDelegate.m in Sources */,
+				14007C231F55C6C00095B106 /* TableViewController.m in Sources */,
+				14007C251F55C6DA0095B106 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		14007C281F55C97B0095B106 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14007C291F55C97B0095B106 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		14007C2A1F55C97B0095B106 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				14007C2B1F55C97B0095B106 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1419E1081F52CCB6000AC3BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1419E1091F52CCB6000AC3BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1419E10B1F52CCB6000AC3BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A74AF094995867A461EF3CA0 /* Pods-LYWebViewController.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XXHND5J98K;
+				INFOPLIST_FILE = "$(SRCROOT)/LYWebViewController/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ll.azw..LYWebViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1419E10C1F52CCB6000AC3BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B6C97C8F6755E1B8FC917CD /* Pods-LYWebViewController.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = XXHND5J98K;
+				INFOPLIST_FILE = "$(SRCROOT)/LYWebViewController/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ll.azw..LYWebViewController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1419E0EE1F52CCB6000AC3BE /* Build configuration list for PBXProject "LYWebViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1419E1081F52CCB6000AC3BE /* Debug */,
+				1419E1091F52CCB6000AC3BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1419E10A1F52CCB6000AC3BE /* Build configuration list for PBXNativeTarget "LYWebViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1419E10B1F52CCB6000AC3BE /* Debug */,
+				1419E10C1F52CCB6000AC3BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1419E0EB1F52CCB6000AC3BE /* Project object */;
+}

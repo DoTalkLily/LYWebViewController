@@ -1,0 +1,16 @@
+PODS:
+  - LYWebViewController (0.1.0)
+
+DEPENDENCIES:
+  - LYWebViewController (from `../`)
+
+EXTERNAL SOURCES:
+  LYWebViewController:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  LYWebViewController: cf97a942377c5d755e42efd1895e7ba43f685301
+
+PODFILE CHECKSUM: e30527acea41033dc6833d7a81a722e910c1aaf8
+
+COCOAPODS: 1.2.1

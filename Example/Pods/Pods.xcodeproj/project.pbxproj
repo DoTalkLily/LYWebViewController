@@ -1,0 +1,741 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08A8B616DEB221BE1FC38E7121FCA523 /* LYWebViewMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 48030023C5D6DC489A7A6D503A25D1A9 /* LYWebViewMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0ED6192FA4E4CFA4CF373ED2DA275C6C /* LYPopNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 501F3ABF15202F8D98F0E4030093179B /* LYPopNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0EF38C850A88AA2B6379A2A7C62F8531 /* LYPopNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1DB547DEF4B72C34B2F4ADE18C08ED /* LYPopNavigationController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1385F222BD6D1C23488431E97D4EC17B /* UIProgressView+Webkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 04207DD7860B8625801AD5C66CFCA756 /* UIProgressView+Webkit.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		1D71C3C242751DCB6AA91EA1A6615BBB /* LYUIWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 98AC8335A504FC1BE8E3AC39C04CFF0C /* LYUIWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1FB1BE81036708FF5EFA8BBA798F80E4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACCF78C37CDFCFDEB7867B41FA44FA26 /* UIKit.framework */; };
+		286AD7F99FA17DE9557CA3AF051F2B75 /* Pods-LYWebViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECD5AC03CCB54562F34758F48CA248E /* Pods-LYWebViewController-dummy.m */; };
+		2EB2BC04C3D7115D9509063669D9638D /* LYWebViewController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 421DBDE66B79C37F8014D9DFE654D072 /* LYWebViewController-dummy.m */; };
+		3BB4AB755C2D28844A8E533A8D51B72A /* LYWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D291CE41F5FE6E7F579950610C6D2A58 /* LYWebViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		3DB1CB7A4A1E2FB9D4955991DCAB97ED /* zh-Hant.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 44DBAB7F1256A4A7A5D4A4FD2BFA0161 /* zh-Hant.lproj */; };
+		4932E1F1BDDBA4DADC7FC89F60EC7D8C /* LYWebViewControllerActivity.h in Headers */ = {isa = PBXBuildFile; fileRef = BB43BF6A550667F1FE8DFBDF0024B01F /* LYWebViewControllerActivity.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		496F689604D9A84C87D25229A16DD5BB /* LYWebViewControllerActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = D94172E5CE88B1EE120B6EE225EA7B8C /* LYWebViewControllerActivity.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		57204E498D78EC1AF518FD8045F905EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA29C04F1BC97C44E8F15211F977DCA8 /* Assets.xcassets */; };
+		59B5B18CD5936F1859C8A3C6B02F5218 /* zh-Hans.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 4F2712033F51E911E125DB1FF3135D94 /* zh-Hans.lproj */; };
+		6E9D6318507DA8B106DD03985B97B5F5 /* LYWebViewControllerDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E730098004475941D7E7B26A89732AA /* LYWebViewControllerDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		781B0709BFC88DE084D17D196FA4F57D /* LYSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = DE583AB8FFA641F747E1D9C86281D08B /* LYSecurityPolicy.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		8A7A87865F4A19420312252C951C6092 /* en.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 8084D63C840C158ED3E83E76C2B28FF9 /* en.lproj */; };
+		9D88C4552154A398BC33E79EF72DA902 /* LYWebViewMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = DAC26A30514EB82B8CCEF72A2EBE0BE6 /* LYWebViewMacros.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		B539199DC4032235751BD986B5DD2E37 /* html.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 90BE339B3BE5E400D26D896D578167A8 /* html.bundle */; };
+		B773F849092C2423EF465890726DDD82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78303A97700CA406D0BCB9A42F086717 /* Foundation.framework */; };
+		B82F9E4AA2F3D2DCB7FFA7FD3627E420 /* LYUIWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C38773DAEB7FC31BF22AC95966BAEC4D /* LYUIWebViewController.m */; settings = {COMPILER_FLAGS = "-w -Xanalyzer -analyzer-disable-all-checks"; }; };
+		CCDC20784076908B547CDDDB6857102A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78303A97700CA406D0BCB9A42F086717 /* Foundation.framework */; };
+		E17FF4DDBF9547096504DB935BDB1372 /* UIProgressView+WebKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BA88B2D68D7EAAFA1B7B302AE2DC9606 /* UIProgressView+WebKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E9C152E3AB4098C960F24F0E4A2E366A /* LYSecurityPolicy.h in Headers */ = {isa = PBXBuildFile; fileRef = 471539836975B4861F23E4C25ABA301C /* LYSecurityPolicy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F540762D7A55371511AD0E85097AEF0A /* LYWebViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 798F18232AE3E74AA5475C93040978C6 /* LYWebViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F6864400B69FF09E38BB7A04F4B8B946 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAB14A55D4DB30C8D98DB7528D9807F4 /* WebKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00B32C58C6C4437EF55B21DA4047171A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BC7FFD22EA17E49132DBA7A75B0A946E;
+			remoteInfo = "LYWebViewController-LYWebViewController";
+		};
+		65AE0AB3370B9742FF8804E40972CFD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C99F950E69213BEE559C71569C5AA7D;
+			remoteInfo = LYWebViewController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04207DD7860B8625801AD5C66CFCA756 /* UIProgressView+Webkit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+Webkit.m"; sourceTree = "<group>"; };
+		29408FF4D8B57581787CC2EC18C5E602 /* Pods-LYWebViewController-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-LYWebViewController-acknowledgements.markdown"; sourceTree = "<group>"; };
+		38F37E98EE27DF41D87F4646ACA33977 /* Pods-LYWebViewController-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LYWebViewController-resources.sh"; sourceTree = "<group>"; };
+		3ECD5AC03CCB54562F34758F48CA248E /* Pods-LYWebViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-LYWebViewController-dummy.m"; sourceTree = "<group>"; };
+		421DBDE66B79C37F8014D9DFE654D072 /* LYWebViewController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LYWebViewController-dummy.m"; sourceTree = "<group>"; };
+		44DBAB7F1256A4A7A5D4A4FD2BFA0161 /* zh-Hant.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = "zh-Hant.lproj"; sourceTree = "<group>"; };
+		471539836975B4861F23E4C25ABA301C /* LYSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LYSecurityPolicy.h; sourceTree = "<group>"; };
+		48030023C5D6DC489A7A6D503A25D1A9 /* LYWebViewMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LYWebViewMacros.h; sourceTree = "<group>"; };
+		4E730098004475941D7E7B26A89732AA /* LYWebViewControllerDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LYWebViewControllerDelegate.h; sourceTree = "<group>"; };
+		4F2712033F51E911E125DB1FF3135D94 /* zh-Hans.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = "zh-Hans.lproj"; sourceTree = "<group>"; };
+		501F3ABF15202F8D98F0E4030093179B /* LYPopNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LYPopNavigationController.h; sourceTree = "<group>"; };
+		78303A97700CA406D0BCB9A42F086717 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		798F18232AE3E74AA5475C93040978C6 /* LYWebViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LYWebViewController.h; sourceTree = "<group>"; };
+		8084D63C840C158ED3E83E76C2B28FF9 /* en.lproj */ = {isa = PBXFileReference; includeInIndex = 1; path = en.lproj; sourceTree = "<group>"; };
+		8E9560AF13536D6A0BE7896C6A4E4B49 /* Pods-LYWebViewController-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LYWebViewController-frameworks.sh"; sourceTree = "<group>"; };
+		90BE339B3BE5E400D26D896D578167A8 /* html.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; path = html.bundle; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		96A973002967A2B473A87971C18FA949 /* ResourceBundle-LYWebViewController-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-LYWebViewController-Info.plist"; sourceTree = "<group>"; };
+		96B1D3EB3471DDC6C864ED142B071DCF /* Pods-LYWebViewController.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LYWebViewController.debug.xcconfig"; sourceTree = "<group>"; };
+		98AC8335A504FC1BE8E3AC39C04CFF0C /* LYUIWebViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LYUIWebViewController.h; sourceTree = "<group>"; };
+		9F8B4469D005075417930AA6844CEEF3 /* LYWebViewController.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LYWebViewController.bundle; path = LYWebViewController.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F8F99217F7CB953050102D02C235965 /* Pods-LYWebViewController-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LYWebViewController-acknowledgements.plist"; sourceTree = "<group>"; };
+		ACCF78C37CDFCFDEB7867B41FA44FA26 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B457D14BE4DEB42A97E6391EA0D5107A /* LYWebViewController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LYWebViewController.xcconfig; sourceTree = "<group>"; };
+		BA88B2D68D7EAAFA1B7B302AE2DC9606 /* UIProgressView+WebKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+WebKit.h"; sourceTree = "<group>"; };
+		BAB14A55D4DB30C8D98DB7528D9807F4 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		BB43BF6A550667F1FE8DFBDF0024B01F /* LYWebViewControllerActivity.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = LYWebViewControllerActivity.h; sourceTree = "<group>"; };
+		BF1DB547DEF4B72C34B2F4ADE18C08ED /* LYPopNavigationController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LYPopNavigationController.m; sourceTree = "<group>"; };
+		C19BFC2AF5CEF145A734738FC7D9E545 /* libPods-LYWebViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-LYWebViewController.a"; path = "libPods-LYWebViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3030AC34D90E4A50795008DB4E763C9 /* Pods-LYWebViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LYWebViewController.release.xcconfig"; sourceTree = "<group>"; };
+		C38773DAEB7FC31BF22AC95966BAEC4D /* LYUIWebViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LYUIWebViewController.m; sourceTree = "<group>"; };
+		CA29C04F1BC97C44E8F15211F977DCA8 /* Assets.xcassets */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D291CE41F5FE6E7F579950610C6D2A58 /* LYWebViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LYWebViewController.m; sourceTree = "<group>"; };
+		D94172E5CE88B1EE120B6EE225EA7B8C /* LYWebViewControllerActivity.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LYWebViewControllerActivity.m; sourceTree = "<group>"; };
+		DAC26A30514EB82B8CCEF72A2EBE0BE6 /* LYWebViewMacros.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LYWebViewMacros.m; sourceTree = "<group>"; };
+		DE583AB8FFA641F747E1D9C86281D08B /* LYSecurityPolicy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = LYSecurityPolicy.m; sourceTree = "<group>"; };
+		E0592643D56D164AE8DAB7B4C6A1E421 /* libLYWebViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libLYWebViewController.a; path = libLYWebViewController.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F63374DD56F0A50FBD818061D9328A56 /* LYWebViewController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LYWebViewController-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		09A1E7FFD61A38A472843C632D09ECEF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCDC20784076908B547CDDDB6857102A /* Foundation.framework in Frameworks */,
+				1FB1BE81036708FF5EFA8BBA798F80E4 /* UIKit.framework in Frameworks */,
+				F6864400B69FF09E38BB7A04F4B8B946 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A666B472F6CA3A3E93CF9D9D1E967CAE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B773F849092C2423EF465890726DDD82 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4CE4C0D5946E340CF946B1FBB287C9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0287634EE32B6E83B4992AB5A19B7340 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				BB43BF6A550667F1FE8DFBDF0024B01F /* LYWebViewControllerActivity.h */,
+				D94172E5CE88B1EE120B6EE225EA7B8C /* LYWebViewControllerActivity.m */,
+			);
+			name = Activity;
+			path = Activity;
+			sourceTree = "<group>";
+		};
+		122DA2E5084A4393C29BE363C764795C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D21A80A7717CA9FF6F518C4E1DFB9D0 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		21E4AB9EBF9A70C7DFAE535AB91741A3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4E730098004475941D7E7B26A89732AA /* LYWebViewControllerDelegate.h */,
+				48030023C5D6DC489A7A6D503A25D1A9 /* LYWebViewMacros.h */,
+				DAC26A30514EB82B8CCEF72A2EBE0BE6 /* LYWebViewMacros.m */,
+				BA88B2D68D7EAAFA1B7B302AE2DC9606 /* UIProgressView+WebKit.h */,
+				04207DD7860B8625801AD5C66CFCA756 /* UIProgressView+Webkit.m */,
+			);
+			name = Common;
+			path = Common;
+			sourceTree = "<group>";
+		};
+		3D21A80A7717CA9FF6F518C4E1DFB9D0 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				78303A97700CA406D0BCB9A42F086717 /* Foundation.framework */,
+				ACCF78C37CDFCFDEB7867B41FA44FA26 /* UIKit.framework */,
+				BAB14A55D4DB30C8D98DB7528D9807F4 /* WebKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		47FF2D081B6E26A2436786A40190355C /* LYWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C0A6677D1BF161D7F50B8F5E03B14EBC /* LYWebViewController */,
+				E9FD1289EEB2E9CC13561CB654CB9FA0 /* Resources */,
+				96C738F5464ED83C3FE7C023429F09C4 /* Support Files */,
+			);
+			name = LYWebViewController;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		7D1BFAC1DD4C00F1042FF95B8D7CB908 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				47FF2D081B6E26A2436786A40190355C /* LYWebViewController */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				7D1BFAC1DD4C00F1042FF95B8D7CB908 /* Development Pods */,
+				122DA2E5084A4393C29BE363C764795C /* Frameworks */,
+				8A85ADEFDC61F13AF3A6974F027E741B /* Products */,
+				7F420F81E5209F6E67D8683BE7E59DBC /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7E089CF630A6F4F714F6E69E064627B2 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				501F3ABF15202F8D98F0E4030093179B /* LYPopNavigationController.h */,
+				BF1DB547DEF4B72C34B2F4ADE18C08ED /* LYPopNavigationController.m */,
+			);
+			name = Navigation;
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		7F420F81E5209F6E67D8683BE7E59DBC /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE4A99095AAE69B19D33921CA93AFC0C /* Pods-LYWebViewController */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		8A85ADEFDC61F13AF3A6974F027E741B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E0592643D56D164AE8DAB7B4C6A1E421 /* libLYWebViewController.a */,
+				C19BFC2AF5CEF145A734738FC7D9E545 /* libPods-LYWebViewController.a */,
+				9F8B4469D005075417930AA6844CEEF3 /* LYWebViewController.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8FAA12D2C43B5C76DA2C7FDA11DCCC25 /* LYWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DAD92A107125FC4085A30DC965E25A15 /* Resources */,
+			);
+			name = LYWebViewController;
+			path = LYWebViewController;
+			sourceTree = "<group>";
+		};
+		96C738F5464ED83C3FE7C023429F09C4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				B457D14BE4DEB42A97E6391EA0D5107A /* LYWebViewController.xcconfig */,
+				421DBDE66B79C37F8014D9DFE654D072 /* LYWebViewController-dummy.m */,
+				F63374DD56F0A50FBD818061D9328A56 /* LYWebViewController-prefix.pch */,
+				96A973002967A2B473A87971C18FA949 /* ResourceBundle-LYWebViewController-Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/LYWebViewController";
+			sourceTree = "<group>";
+		};
+		A382A3DCAA8A0C25141816AC05E7028B /* Security */ = {
+			isa = PBXGroup;
+			children = (
+				471539836975B4861F23E4C25ABA301C /* LYSecurityPolicy.h */,
+				DE583AB8FFA641F747E1D9C86281D08B /* LYSecurityPolicy.m */,
+			);
+			name = Security;
+			path = Security;
+			sourceTree = "<group>";
+		};
+		C0A6677D1BF161D7F50B8F5E03B14EBC /* LYWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F99BDFC6CD6944923C0F3110003A2EE4 /* Classes */,
+			);
+			name = LYWebViewController;
+			path = LYWebViewController;
+			sourceTree = "<group>";
+		};
+		CE4A99095AAE69B19D33921CA93AFC0C /* Pods-LYWebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				29408FF4D8B57581787CC2EC18C5E602 /* Pods-LYWebViewController-acknowledgements.markdown */,
+				9F8F99217F7CB953050102D02C235965 /* Pods-LYWebViewController-acknowledgements.plist */,
+				3ECD5AC03CCB54562F34758F48CA248E /* Pods-LYWebViewController-dummy.m */,
+				8E9560AF13536D6A0BE7896C6A4E4B49 /* Pods-LYWebViewController-frameworks.sh */,
+				38F37E98EE27DF41D87F4646ACA33977 /* Pods-LYWebViewController-resources.sh */,
+				96B1D3EB3471DDC6C864ED142B071DCF /* Pods-LYWebViewController.debug.xcconfig */,
+				C3030AC34D90E4A50795008DB4E763C9 /* Pods-LYWebViewController.release.xcconfig */,
+			);
+			name = "Pods-LYWebViewController";
+			path = "Target Support Files/Pods-LYWebViewController";
+			sourceTree = "<group>";
+		};
+		DAD92A107125FC4085A30DC965E25A15 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA29C04F1BC97C44E8F15211F977DCA8 /* Assets.xcassets */,
+				8084D63C840C158ED3E83E76C2B28FF9 /* en.lproj */,
+				90BE339B3BE5E400D26D896D578167A8 /* html.bundle */,
+				4F2712033F51E911E125DB1FF3135D94 /* zh-Hans.lproj */,
+				44DBAB7F1256A4A7A5D4A4FD2BFA0161 /* zh-Hant.lproj */,
+			);
+			name = Resources;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E9FD1289EEB2E9CC13561CB654CB9FA0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8FAA12D2C43B5C76DA2C7FDA11DCCC25 /* LYWebViewController */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F99BDFC6CD6944923C0F3110003A2EE4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				98AC8335A504FC1BE8E3AC39C04CFF0C /* LYUIWebViewController.h */,
+				C38773DAEB7FC31BF22AC95966BAEC4D /* LYUIWebViewController.m */,
+				798F18232AE3E74AA5475C93040978C6 /* LYWebViewController.h */,
+				D291CE41F5FE6E7F579950610C6D2A58 /* LYWebViewController.m */,
+				0287634EE32B6E83B4992AB5A19B7340 /* Activity */,
+				21E4AB9EBF9A70C7DFAE535AB91741A3 /* Common */,
+				7E089CF630A6F4F714F6E69E064627B2 /* Navigation */,
+				A382A3DCAA8A0C25141816AC05E7028B /* Security */,
+			);
+			name = Classes;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EBAF175707D8EB6614A4088F5AFBCBFD /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0ED6192FA4E4CFA4CF373ED2DA275C6C /* LYPopNavigationController.h in Headers */,
+				E9C152E3AB4098C960F24F0E4A2E366A /* LYSecurityPolicy.h in Headers */,
+				1D71C3C242751DCB6AA91EA1A6615BBB /* LYUIWebViewController.h in Headers */,
+				F540762D7A55371511AD0E85097AEF0A /* LYWebViewController.h in Headers */,
+				4932E1F1BDDBA4DADC7FC89F60EC7D8C /* LYWebViewControllerActivity.h in Headers */,
+				6E9D6318507DA8B106DD03985B97B5F5 /* LYWebViewControllerDelegate.h in Headers */,
+				08A8B616DEB221BE1FC38E7121FCA523 /* LYWebViewMacros.h in Headers */,
+				E17FF4DDBF9547096504DB935BDB1372 /* UIProgressView+WebKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		3C99F950E69213BEE559C71569C5AA7D /* LYWebViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5934FCA82AD75888FBA36B0AC2F59A5D /* Build configuration list for PBXNativeTarget "LYWebViewController" */;
+			buildPhases = (
+				367D20900CB7D02C8E98607D50DADE33 /* Sources */,
+				09A1E7FFD61A38A472843C632D09ECEF /* Frameworks */,
+				EBAF175707D8EB6614A4088F5AFBCBFD /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7776507C0D02DC5D20A62A22FB1F3B76 /* PBXTargetDependency */,
+			);
+			name = LYWebViewController;
+			productName = LYWebViewController;
+			productReference = E0592643D56D164AE8DAB7B4C6A1E421 /* libLYWebViewController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		61C5DEBEFFDBD1B00354377F16896D0B /* Pods-LYWebViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C518595AFD1237E72BCC4584F2818034 /* Build configuration list for PBXNativeTarget "Pods-LYWebViewController" */;
+			buildPhases = (
+				3E8F4AA96228657ED0182823BA08D425 /* Sources */,
+				A666B472F6CA3A3E93CF9D9D1E967CAE /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D33403126676905A21F801CFD2718A4 /* PBXTargetDependency */,
+			);
+			name = "Pods-LYWebViewController";
+			productName = "Pods-LYWebViewController";
+			productReference = C19BFC2AF5CEF145A734738FC7D9E545 /* libPods-LYWebViewController.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		BC7FFD22EA17E49132DBA7A75B0A946E /* LYWebViewController-LYWebViewController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E71EE35FA86124514D8AF0010C6EF720 /* Build configuration list for PBXNativeTarget "LYWebViewController-LYWebViewController" */;
+			buildPhases = (
+				7E77194555086C5176D872279042B0D3 /* Sources */,
+				D4CE4C0D5946E340CF946B1FBB287C9A /* Frameworks */,
+				950A72B5088117E2DBDA8D89BE03D838 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "LYWebViewController-LYWebViewController";
+			productName = "LYWebViewController-LYWebViewController";
+			productReference = 9F8B4469D005075417930AA6844CEEF3 /* LYWebViewController.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = 8A85ADEFDC61F13AF3A6974F027E741B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C99F950E69213BEE559C71569C5AA7D /* LYWebViewController */,
+				BC7FFD22EA17E49132DBA7A75B0A946E /* LYWebViewController-LYWebViewController */,
+				61C5DEBEFFDBD1B00354377F16896D0B /* Pods-LYWebViewController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		950A72B5088117E2DBDA8D89BE03D838 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57204E498D78EC1AF518FD8045F905EE /* Assets.xcassets in Resources */,
+				8A7A87865F4A19420312252C951C6092 /* en.lproj in Resources */,
+				B539199DC4032235751BD986B5DD2E37 /* html.bundle in Resources */,
+				59B5B18CD5936F1859C8A3C6B02F5218 /* zh-Hans.lproj in Resources */,
+				3DB1CB7A4A1E2FB9D4955991DCAB97ED /* zh-Hant.lproj in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		367D20900CB7D02C8E98607D50DADE33 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0EF38C850A88AA2B6379A2A7C62F8531 /* LYPopNavigationController.m in Sources */,
+				781B0709BFC88DE084D17D196FA4F57D /* LYSecurityPolicy.m in Sources */,
+				B82F9E4AA2F3D2DCB7FFA7FD3627E420 /* LYUIWebViewController.m in Sources */,
+				2EB2BC04C3D7115D9509063669D9638D /* LYWebViewController-dummy.m in Sources */,
+				3BB4AB755C2D28844A8E533A8D51B72A /* LYWebViewController.m in Sources */,
+				496F689604D9A84C87D25229A16DD5BB /* LYWebViewControllerActivity.m in Sources */,
+				9D88C4552154A398BC33E79EF72DA902 /* LYWebViewMacros.m in Sources */,
+				1385F222BD6D1C23488431E97D4EC17B /* UIProgressView+Webkit.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E8F4AA96228657ED0182823BA08D425 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				286AD7F99FA17DE9557CA3AF051F2B75 /* Pods-LYWebViewController-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E77194555086C5176D872279042B0D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D33403126676905A21F801CFD2718A4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LYWebViewController;
+			target = 3C99F950E69213BEE559C71569C5AA7D /* LYWebViewController */;
+			targetProxy = 65AE0AB3370B9742FF8804E40972CFD4 /* PBXContainerItemProxy */;
+		};
+		7776507C0D02DC5D20A62A22FB1F3B76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "LYWebViewController-LYWebViewController";
+			target = BC7FFD22EA17E49132DBA7A75B0A946E /* LYWebViewController-LYWebViewController */;
+			targetProxy = 00B32C58C6C4437EF55B21DA4047171A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		0CD2007B152B09D3E92D4F75DDF99E8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B457D14BE4DEB42A97E6391EA0D5107A /* LYWebViewController.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LYWebViewController";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/LYWebViewController/ResourceBundle-LYWebViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = LYWebViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		34FE9531DA9AF2820790339988D5FF41 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		597FEE7CE70755C8704E437B97955CE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B457D14BE4DEB42A97E6391EA0D5107A /* LYWebViewController.xcconfig */;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/LYWebViewController";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/LYWebViewController/ResourceBundle-LYWebViewController-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				PRODUCT_NAME = LYWebViewController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		929533F6CD87E85F262164432FBC9CF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96B1D3EB3471DDC6C864ED142B071DCF /* Pods-LYWebViewController.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B439A740A7ADCE2D1D5CD8ABD085BDA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3030AC34D90E4A50795008DB4E763C9 /* Pods-LYWebViewController.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		C104F7F091290C3D1E248192F07FE689 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C15FD1158A2BADC70D72F7B1C3E97B3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B457D14BE4DEB42A97E6391EA0D5107A /* LYWebViewController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LYWebViewController/LYWebViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F23B9ED5DBCE604C27622C2172CFD241 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B457D14BE4DEB42A97E6391EA0D5107A /* LYWebViewController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LYWebViewController/LYWebViewController-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C104F7F091290C3D1E248192F07FE689 /* Debug */,
+				34FE9531DA9AF2820790339988D5FF41 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5934FCA82AD75888FBA36B0AC2F59A5D /* Build configuration list for PBXNativeTarget "LYWebViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C15FD1158A2BADC70D72F7B1C3E97B3E /* Debug */,
+				F23B9ED5DBCE604C27622C2172CFD241 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C518595AFD1237E72BCC4584F2818034 /* Build configuration list for PBXNativeTarget "Pods-LYWebViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				929533F6CD87E85F262164432FBC9CF6 /* Debug */,
+				B439A740A7ADCE2D1D5CD8ABD085BDA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E71EE35FA86124514D8AF0010C6EF720 /* Build configuration list for PBXNativeTarget "LYWebViewController-LYWebViewController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0CD2007B152B09D3E92D4F75DDF99E8D /* Debug */,
+				597FEE7CE70755C8704E437B97955CE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
