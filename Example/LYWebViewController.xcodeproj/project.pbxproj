@@ -12,8 +12,8 @@
 		14007C231F55C6C00095B106 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14007C201F55C6C00095B106 /* TableViewController.m */; };
 		14007C251F55C6DA0095B106 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14007C241F55C6DA0095B106 /* main.m */; };
 		14007C271F55C6FA0095B106 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14007C261F55C6FA0095B106 /* Assets.xcassets */; };
-		14007C2C1F55C97B0095B106 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14007C281F55C97B0095B106 /* LaunchScreen.storyboard */; };
-		14007C2D1F55C97B0095B106 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14007C2A1F55C97B0095B106 /* Main.storyboard */; };
+		14007C401F5666B30095B106 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14007C3E1F5666B30095B106 /* LaunchScreen.storyboard */; };
+		14007C411F5666B30095B106 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14007C3F1F5666B30095B106 /* Main.storyboard */; };
 		423E432091D16570F329F9A9 /* libPods-LYWebViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 862A3F73F7366D5C45141B91 /* libPods-LYWebViewController.a */; };
 /* End PBXBuildFile section */
 
@@ -25,8 +25,8 @@
 		14007C201F55C6C00095B106 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TableViewController.m; path = LYWebViewController/TableViewController.m; sourceTree = SOURCE_ROOT; };
 		14007C241F55C6DA0095B106 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LYWebViewController/main.m; sourceTree = SOURCE_ROOT; };
 		14007C261F55C6FA0095B106 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = LYWebViewController/Assets.xcassets; sourceTree = SOURCE_ROOT; };
-		14007C291F55C97B0095B106 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LYWebViewController/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		14007C2B1F55C97B0095B106 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LYWebViewController/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		14007C3E1F5666B30095B106 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = LYWebViewController/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		14007C3F1F5666B30095B106 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = LYWebViewController/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		1419E0F31F52CCB6000AC3BE /* LYWebViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYWebViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B6C97C8F6755E1B8FC917CD /* Pods-LYWebViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYWebViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYWebViewController/Pods-LYWebViewController.release.xcconfig"; sourceTree = "<group>"; };
 		862A3F73F7366D5C45141B91 /* libPods-LYWebViewController.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LYWebViewController.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,8 +67,8 @@
 		1419E0F51F52CCB6000AC3BE /* LYWebViewController */ = {
 			isa = PBXGroup;
 			children = (
-				14007C281F55C97B0095B106 /* LaunchScreen.storyboard */,
-				14007C2A1F55C97B0095B106 /* Main.storyboard */,
+				14007C3E1F5666B30095B106 /* LaunchScreen.storyboard */,
+				14007C3F1F5666B30095B106 /* Main.storyboard */,
 				14007C261F55C6FA0095B106 /* Assets.xcassets */,
 				14007C1C1F55C6C00095B106 /* AppDelegate.h */,
 				14007C1D1F55C6C00095B106 /* AppDelegate.m */,
@@ -169,10 +169,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14007C2C1F55C97B0095B106 /* LaunchScreen.storyboard in Resources */,
+				14007C401F5666B30095B106 /* LaunchScreen.storyboard in Resources */,
 				14007C221F55C6C00095B106 /* Info.plist in Resources */,
 				14007C271F55C6FA0095B106 /* Assets.xcassets in Resources */,
-				14007C2D1F55C97B0095B106 /* Main.storyboard in Resources */,
+				14007C411F5666B30095B106 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,25 +238,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		14007C281F55C97B0095B106 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14007C291F55C97B0095B106 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		14007C2A1F55C97B0095B106 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				14007C2B1F55C97B0095B106 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1419E1081F52CCB6000AC3BE /* Debug */ = {
