@@ -22,9 +22,8 @@ TODO: Add long description of the pod here.
                        DESC
 
   s.homepage         = 'https://github.com/DoTalkLily/LYWebViewController'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = 'MIT'
-  s.author           = { 'DoTalkLily' => 'lili.01@bytedance.com' }
+  s.author           = { 'DoTalkLily' => '343195590@qq.com' }
   s.source           = { :git => 'https://github.com/DoTalkLily/LYWebViewController.git', :tag => s.version }
 
   s.ios.deployment_target = '8.0'
