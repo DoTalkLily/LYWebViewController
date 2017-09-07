@@ -12,7 +12,7 @@
 #import <StoreKit/StoreKit.h>
 #import <objc/runtime.h>
 
-@interface LYWKWebViewController ()
+@interface LYWKWebViewController () <WKUIDelegate, WKNavigationDelegate, LYWebViewProgressDelegate, SKStoreProductViewControllerDelegate>
 {
     BOOL _loading;
     WKWebViewConfiguration *_configuration;
@@ -260,7 +260,7 @@
     if (self.navigationType == LYWebViewControllerNavigationToolItem) {
         [self updateToolbarItems];
     }
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didStartLoad:)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didStartLoad)]) {
         [self.delegate didStartLoad];
     }
     _loading = YES;

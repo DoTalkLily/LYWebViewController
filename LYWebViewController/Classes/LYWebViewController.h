@@ -20,6 +20,8 @@ typedef NS_ENUM(NSInteger, LYWebViewControllerNavigationType) {
     LYWebViewControllerNavigationToolItem
 };
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface LYWebViewController : UIViewController
 
 @property(nonatomic, assign) BOOL showsToolBar;
@@ -42,7 +44,7 @@ typedef NS_ENUM(NSInteger, LYWebViewControllerNavigationType) {
 @property(nonatomic, strong) UIBarButtonItem *actionBarButtonItem;
 @property(nonatomic, strong) UIBarButtonItem *forwardBarButtonItem;
 @property(nonatomic, strong) UIBarButtonItem *refreshBarButtonItem;
-@property(strong, nonatomic) UIBarButtonItem *navigationBackItem;
+@property(nonatomic, strong) UIBarButtonItem *navigationBackItem;
 @property(nonatomic, strong) UIBarButtonItem *navigationCloseItem;
 
 - (instancetype)initWithURL:(NSURL*)URL;
@@ -53,16 +55,16 @@ typedef NS_ENUM(NSInteger, LYWebViewControllerNavigationType) {
 
 - (instancetype)initWithHTMLString:(NSString*)HTMLString baseURL:(NSURL*)baseURL;
 
+// for subclass to use or inherit
+
 - (void)loadURL:(NSURL*)URL;
 
 - (void)loadURLRequest:(NSURLRequest *)request;
 
 - (void)loadHTMLString:(NSString *)HTMLString baseURL:(NSURL *)baseURL;
 
-// clear cache
 - (void)clearWebCacheCompletion:(dispatch_block_t _Nullable)completion;
 
-// for subclass to use or inherit
 - (void)setupSubviews;
 
 - (void)updateToolbarItems;
@@ -71,4 +73,19 @@ typedef NS_ENUM(NSInteger, LYWebViewControllerNavigationType) {
 
 - (void)updateFrameOfProgressView;
 
+- (void)actionButtonClicked:(id)sender;
+
+- (void)goBackClicked:(UIBarButtonItem *)sender;
+
+- (void)goForwardClicked:(UIBarButtonItem *)sender;
+
+- (void)reloadClicked:(UIBarButtonItem *)sender;
+
+- (void)stopClicked:(UIBarButtonItem *)sender;
+
+- (void)navigationItemHandleBack:(UIBarButtonItem *)sender;
+
 @end
+
+NS_ASSUME_NONNULL_END
+

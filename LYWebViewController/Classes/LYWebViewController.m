@@ -37,7 +37,7 @@
 - (instancetype)initWithURL:(NSURL*)pageURL
 {
     if(self = [self init]) {
-        self.URL = pageURL;
+        _URL = pageURL;
     }
     return self;
 }
@@ -45,7 +45,7 @@
 - (instancetype)initWithRequest:(NSURLRequest *)request
 {
     if (self = [self init]) {
-        self.request = request;
+        _request = request;
     }
     return self;
 }
@@ -53,8 +53,8 @@
 - (instancetype)initWithHTMLString:(NSString *)HTMLString baseURL:(NSURL *)baseURL
 {
     if (self = [self init]) {
-        self.HTMLString = HTMLString;
-        self.baseURL = baseURL;
+        _HTMLString = HTMLString;
+        _baseURL = baseURL;
     }
     return self;
 }
@@ -328,10 +328,31 @@
 }
 
 #pragma mark - for subclass inherit
+
 - (void)setupSubviews {}
 
 - (void)updateToolbarItems {}
 
 - (void)updateNavigationItems {}
+
+- (void)loadURL:(NSURL*)URL {}
+
+- (void)loadURLRequest:(NSURLRequest *)request {}
+
+- (void)loadHTMLString:(NSString *)HTMLString baseURL:(NSURL *)baseURL {}
+
+- (void)clearWebCacheCompletion:(dispatch_block_t _Nullable)completion {}
+
+- (void)actionButtonClicked:(id)sender {}
+
+- (void)goBackClicked:(UIBarButtonItem *)sender {}
+
+- (void)goForwardClicked:(UIBarButtonItem *)sender {}
+
+- (void)reloadClicked:(UIBarButtonItem *)sender {}
+
+- (void)stopClicked:(UIBarButtonItem *)sender {}
+
+- (void)navigationItemHandleBack:(UIBarButtonItem *)sender {}
 
 @end

@@ -10,7 +10,7 @@
 #import <StoreKit/StoreKit.h>
 #import "LYWebViewControllerActivity.h"
 
-@interface LYUIWebViewController ()
+@interface LYUIWebViewController () <UIWebViewDelegate, LYWebViewProgressDelegate, SKStoreProductViewControllerDelegate>
 {
     BOOL _loading;
 }
@@ -227,7 +227,7 @@
     host = self.webView.request.URL.host;
     self.backgroundLabel.text = [NSString stringWithFormat:@"%@\"%@\"%@.", LYWebViewControllerLocalizedString(@"web page",@""), host?:bundle, LYWebViewControllerLocalizedString(@"provided",@"")];
     
-    if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishLoad:)]) {
+    if (self.delegate && [self.delegate respondsToSelector:@selector(didFinishLoad)]) {
         [self.delegate didFinishLoad];
     }
     

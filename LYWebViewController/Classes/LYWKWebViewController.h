@@ -12,7 +12,9 @@
 #import "LYWebViewMacros.h"
 #import "LYWebViewControllerProtocal.h"
 
-@interface LYWKWebViewController : LYWebViewController <WKUIDelegate, WKNavigationDelegate, LYWebViewProgressDelegate>
+NS_ASSUME_NONNULL_BEGIN
+
+@interface LYWKWebViewController : LYWebViewController
 
 @property(assign, nonatomic) BOOL enabledWebViewUIDelegate;
 @property(nonatomic, readonly) WKWebView *webView;
@@ -40,3 +42,5 @@
 - (void)clearWebCacheCompletion:(dispatch_block_t _Nullable)completion;
 
 @end
+
+NS_ASSUME_NONNULL_END

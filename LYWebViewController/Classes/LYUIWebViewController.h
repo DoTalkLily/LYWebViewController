@@ -11,8 +11,9 @@
 #import "LYWebViewControllerProtocal.h"
 #import "UIProgressView+WebKit.h"
 
-@interface LYUIWebViewController : LYWebViewController <UIWebViewDelegate, LYWebViewProgressDelegate>
+NS_ASSUME_NONNULL_BEGIN
 
+@interface LYUIWebViewController : LYWebViewController
 @property(nonatomic, readonly) UIWebView *webView;
 
 - (instancetype)init;
@@ -33,3 +34,4 @@
 - (void)clearWebCacheCompletion:(dispatch_block_t _Nullable)completion;
 
 @end
+NS_ASSUME_NONNULL_END
