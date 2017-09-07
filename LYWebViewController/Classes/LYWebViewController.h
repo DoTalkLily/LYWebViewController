@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LYWebViewControllerProtocal.h"
-#import "MJRefreshHeader.h"
+#import <MJRefresh/MJRefresh.h>
 
 typedef NS_ENUM(NSInteger, LYWebViewControllerType) {
     LYWKWebViewControllerType,
@@ -58,15 +58,6 @@ typedef NS_ENUM(NSInteger, LYWebViewControllerNavigationType) {
 - (void)loadURLRequest:(NSURLRequest *)request;
 
 - (void)loadHTMLString:(NSString *)HTMLString baseURL:(NSURL *)baseURL;
-
-// setter
-- (void)setURL:(NSURL *)URL;
-
-- (void)setRequest:(NSURLRequest *)request;
-
-- (void)setURLString:(NSString *)urlString;
-
-- (void)setHTMLString:(NSString *)HTMLString baseURL:(NSURL *)baseURL;
 
 // clear cache
 - (void)clearWebCacheCompletion:(dispatch_block_t _Nullable)completion;

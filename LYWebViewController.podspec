@@ -9,16 +9,9 @@
 Pod::Spec.new do |s|
   s.name             = 'LYWebViewController'
   s.version          = '0.0.1'
-  s.summary          = 'A webview viewcontroller based on wkwebview.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
+  s.summary          = 'A solution for iOS WebView.'
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+                       A solution for iOS WebView. It provides JSBridge and off-line resoure support for both UIWebView and WKWebView.
                        DESC
 
   s.homepage         = 'https://github.com/DoTalkLily/LYWebViewController'
@@ -32,9 +25,10 @@ TODO: Add long description of the pod here.
   s.resource_bundle = { 'LYWebViewController' => ['LYWebViewController/Resources/*'] }
   s.requires_arc = true
 
+
   s.frameworks = "UIKit", "Foundation", "WebKit"
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'LYWebViewController/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
   s.dependency "MJRefresh"
 end
