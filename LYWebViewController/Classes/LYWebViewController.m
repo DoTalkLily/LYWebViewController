@@ -327,4 +327,11 @@
     [viewController dismissViewControllerAnimated:YES completion:NULL];
 }
 
+#pragma mark - for subclass inherit
+- (void)setupSubviews {}
+
+- (void)updateToolbarItems {}
+
+- (void)updateNavigationItems {}
+
 @end

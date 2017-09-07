@@ -71,7 +71,7 @@ typedef NS_ENUM(NSInteger, LYWebViewControllerNavigationType) {
 // clear cache
 - (void)clearWebCacheCompletion:(dispatch_block_t _Nullable)completion;
 
-// subclass
+// for subclass to use or inherit
 - (void)setupSubviews;
 
 - (void)updateToolbarItems;
@@ -79,6 +79,5 @@ typedef NS_ENUM(NSInteger, LYWebViewControllerNavigationType) {
 - (void)updateNavigationItems;
 
 - (void)updateFrameOfProgressView;
-
 
 @end
