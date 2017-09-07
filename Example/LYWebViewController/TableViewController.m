@@ -9,6 +9,7 @@
 #import "TableViewController.h"
 #import "LYWebViewController.h"
 #import "LYUIWebViewController.h"
+#import "LYWKWebViewController.h"
 
 @interface TableViewController () <UITextFieldDelegate>
 
@@ -36,56 +37,46 @@
     switch (indexPath.row) {
         case 0:
         {
-            LYWebViewController *webVC = [[LYWebViewController alloc] initWithURL:[NSURL fileURLWithPath:[NSBundle.mainBundle pathForResource:@"Swift" ofType:@"pdf"]]];
-            webVC.title = @"Swift.pdf";
+            LYWebViewController *webVC = [[LYWKWebViewController alloc] initWithURL:[NSURL fileURLWithPath:[NSBundle.mainBundle pathForResource:@"iOS_Core_Animation_Advanced_Techniques" ofType:@"pdf"]]];
+            webVC.title = @"iOS_Core_Animation_Advanced_Techniques.pdf";
             webVC.showsToolBar = NO;
             if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0) {
-                webVC.webView.allowsLinkPreview = YES;
+                webVC.allowsLinkPreview = YES;
             }
             [self.navigationController pushViewController:webVC animated:YES];
         }
             break;
         case 1:
         {
-            LYWebViewController *webVC = [[LYWebViewController alloc] initWithAddress:@"http://weibo.com/u/1945904165/home?wvr=5"];
+            LYWebViewController *webVC = [[LYWKWebViewController alloc] initWithAddress:@"https://github.com/DoTalkLily/LYWebViewController"];
             webVC.showsToolBar = NO;
             if ([UIDevice currentDevice].systemVersion.floatValue >= 9.0) {
-                webVC.webView.allowsLinkPreview = YES;
+                webVC.allowsLinkPreview = YES;
             }
             [self.navigationController pushViewController:webVC animated:YES];
         }
             break;
         case 2:
         {
-            LYWebViewController *webVC = [[LYWebViewController alloc] initWithAddress:@"http://weibo.com"];
+            LYWebViewController *webVC = [[LYWKWebViewController alloc] initWithAddress:@"https://github.com/DoTalkLily/LYWebViewController"];
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:webVC];
             nav.navigationBar.tintColor = [UIColor colorWithRed:0.322 green:0.322 blue:0.322 alpha:1.00];
-            [self presentViewController:nav animated:YES completion:NULL];
             webVC.navigationType = LYWebViewControllerNavigationToolItem;
             webVC.showsToolBar = YES;
-            webVC.navigationType = 1;
+            [self presentViewController:nav animated:YES completion:NULL];
         }
             break;
         case 3: {
-            LYWebViewController *webVC = [[LYWebViewController alloc] initWithAddress:@"http://weibo.com/"];
+            LYWebViewController *webVC = [[LYWKWebViewController alloc] initWithAddress:@"https://github.com/DoTalkLily/LYWebViewController"];
             webVC.showsToolBar = NO;
             webVC.showsBackgroundLabel = NO;
             if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_9_0) {
-                webVC.webView.allowsLinkPreview = YES;
+                webVC.allowsLinkPreview = YES;
             }
             [self.navigationController pushViewController:webVC animated:YES];
         } break;
         case 4: {
-            LYWebViewController *webVC = [[LYWebViewController alloc] initWithAddress:@"https://github.com/devedbox/LYWebViewController/issues/10"];
-            webVC.showsToolBar = NO;
-            webVC.navigationType = LYWebViewControllerNavigationBarItem;
-            if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_9_0) {
-                webVC.webView.allowsLinkPreview = YES;
-            }
-            [self.navigationController pushViewController:webVC animated:YES];
-        } break;
-        case 5: {
-            LYUIWebViewController *webVC = [[LYUIWebViewController alloc] initWithAddress:@"https://github.com/Roxasora/RxWebViewController"];
+            LYUIWebViewController *webVC = [[LYUIWebViewController alloc] initWithAddress:@"https://github.com/DoTalkLily/LYWebViewController"];
             webVC.showsToolBar = NO;
             webVC.navigationType = LYWebViewControllerNavigationBarItem;
             [self.navigationController pushViewController:webVC animated:YES];
@@ -107,8 +98,8 @@
 }
 
 - (IBAction)clearCache:(id)sender {
-    [LYWebViewController clearWebCacheCompletion:^{
-    }];
+//    [LYWebViewController clearWebCacheCompletion:^{
+//    }];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -124,7 +115,7 @@
         LYWebViewController *webVC = [[LYWebViewController alloc] initWithURL:URL];
         webVC.showsToolBar = NO;
         if (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_9_0) {
-            webVC.webView.allowsLinkPreview = YES;
+            webVC.allowsLinkPreview = YES;
         }
         [self.navigationController pushViewController:webVC animated:YES];
     }

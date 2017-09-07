@@ -30,13 +30,13 @@ TODO: Add long description of the pod here.
   s.ios.deployment_target = '8.0'
 
   s.source_files  = 'LYWebViewController/Classes/**/*.{h,m}'
-  s.resource_bundle = { "LYWebViewController" => ["LYWebViewController/Resources/*"] }
+  s.resource_bundle = { 'LYWebViewController' => ['LYWebViewController/Resources/*'] }
   s.requires_arc = true
 
   s.frameworks = "UIKit", "Foundation", "WebKit"
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency "NJKWebViewProgress"
+  s.dependency "MJRefresh"
 end
 

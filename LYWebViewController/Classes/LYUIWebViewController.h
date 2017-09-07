@@ -8,42 +8,28 @@
 
 #import <UIKit/UIKit.h>
 #import "LYWebViewMacros.h"
-#import "LYWebViewControllerDelegate.h"
+#import "LYWebViewControllerProtocal.h"
 #import "UIProgressView+WebKit.h"
 
-@interface LYUIWebViewController : UIViewController <UIWebViewDelegate, LYWebViewProgressDelegate>
+@interface LYUIWebViewController : LYWebViewController <UIWebViewDelegate, LYWebViewProgressDelegate>
 
-@property(assign, nonatomic) id<LYWebViewControllerDelegate>delegate;
-@property(readonly, nonatomic) NSURL *URL;
-@property(readonly, nonatomic) UIWebView *webView;
-@property(assign, nonatomic) BOOL showsToolBar;
-@property(assign, nonatomic) BOOL showsBackgroundLabel;
-@property(assign, nonatomic) BOOL reviewsAppInAppStore;
-@property(assign, nonatomic) NSUInteger maxAllowedTitleLength;
-@property(assign, nonatomic) NSTimeInterval timeoutInternal;
-@property(assign, nonatomic) NSURLRequestCachePolicy cachePolicy;
-@property(assign, nonatomic) LYWebViewControllerNavigationType navigationType;
-@property(readwrite, nonatomic) UIBarButtonItem *navigationCloseItem;
+@property(nonatomic, readonly) UIWebView *webView;
 
-- (instancetype)initWithURL:(NSURL*)URL;
-
-- (instancetype)initWithAddress:(NSString*)urlString;
-
-- (instancetype)initWithRequest:(NSURLRequest *)request;
-
-- (instancetype)initWithHTMLString:(NSString*)HTMLString baseURL:(NSURL*)baseURL;
+- (instancetype)init;
 
 - (void)loadURL:(NSURL*)URL;
 
 - (void)loadHTMLString:(NSString *)HTMLString baseURL:(NSURL *)baseURL;
 
-@end
+- (void)setURL:(NSURL *)URL;
 
-/**
- WebCache clearing.
- */
-@interface LYUIWebViewController (WebCache)
+- (void)setRequest:(NSURLRequest *)request;
 
-+ (void)clearWebCacheCompletion:(dispatch_block_t _Nullable)completion;
+- (void)setURLString:(NSString *)urlString;
+
+- (void)setHTMLString:(NSString *)HTMLString baseURL:(NSURL *)baseURL;
+
+// clear cache
+- (void)clearWebCacheCompletion:(dispatch_block_t _Nullable)completion;
 
 @end

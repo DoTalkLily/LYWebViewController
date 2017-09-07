@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  AWEWebViewController
+//  LYWebViewController
 //
 //  Created by 01 on 17/8/27.
 //  Copyright © 2017年 01. All rights reserved.
