@@ -27,7 +27,14 @@ demo:
 This code is distributed under the terms and conditions of the [MIT license](https://github.com/DoTalkLily/LYWebViewController/blob/master/LICENSE).
 
 # Usage
+在Podfile中加一行：
 
+```
+target 'MyApp' do
+  pod 'LYWebViewController', '~> 0.1'
+end
+```
+然后pod install
 
 创建一个基于WKWebView实现的webviewcontroller：
 
@@ -55,8 +62,8 @@ webVC.navigationType = LYWebViewControllerNavigationBarItem;
 
 # 致谢
 
-[AXWebViewController](https://github.com/devedbox/AXWebViewController) 为我提供了思路和参考。
-[MJRefresh](https://github.com/CoderMJLee/MJRefresh) 用于实现下拉刷新功能，也是唯一依赖的库。
++ [AXWebViewController](https://github.com/devedbox/AXWebViewController) 为我提供了思路和参考。
++ [MJRefresh](https://github.com/CoderMJLee/MJRefresh) 用于实现下拉刷新功能，也是唯一依赖的库。
 
 
 具体用法参见demo，欢迎提issue。
