@@ -1,6 +1,7 @@
 # LYWebViewController
 
 基于WKWebView和UIWebView封装（根据项目需求选择哪种实现方式)
+
 # feature list:
 1. 支持UIWebView和WKWebView
 2. 页面加载进度条
@@ -21,7 +22,12 @@ demo:
 
 <img src="https://github.com/DoTalkLily/LYWebViewController/blob/master/demo.gif" width=375 height=667/>
 
-# 使用方式
+# License
+
+This code is distributed under the terms and conditions of the [MIT license](https://github.com/DoTalkLily/LYWebViewController/blob/master/LICENSE).
+
+# Usage
+
 
 创建一个基于WKWebView实现的webviewcontroller：
 
@@ -45,4 +51,12 @@ webVC.navigationType = LYWebViewControllerNavigationBarItem;
 [self.navigationController pushViewController:webVC animated:YES];
 ```
 
-具体用法参见demo，欢迎提issue
+然后可以设置各种属性，导航按钮样式、下拉刷新样式、导航类型（底部工具条还是类似微信webview的顶部导航）、是否在webview中打开appstore还是跳转到appstore，加载网页的各阶段的钩子函数（delegate）等。
+
+# 致谢
+
+[AXWebViewController](https://github.com/devedbox/AXWebViewController) 为我提供了思路和参考。
+[MJRefresh](https://github.com/CoderMJLee/MJRefresh) 用于实现下拉刷新功能，也是唯一依赖的库。
+
+
+具体用法参见demo，欢迎提issue。
