@@ -65,6 +65,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)clearWebCacheCompletion:(dispatch_block_t _Nullable)completion;
 
+@end
+
+@interface LYWebViewController()
+
 - (void)setupSubviews;
 
 - (void)updateToolbarItems;
@@ -86,6 +90,5 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)navigationItemHandleBack:(UIBarButtonItem *)sender;
 
 @end
-
 NS_ASSUME_NONNULL_END
 
