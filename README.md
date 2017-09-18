@@ -190,4 +190,9 @@ return YES;
 + 提供更多自定义UI；
 + 研究如何提升页面加载性能做进一步优化。
 
+### 致谢
+
++ [AXWebViewController](https://github.com/devedbox/AXWebViewController) 为我提供了思路和参考。
++ [MJRefresh](https://github.com/CoderMJLee/MJRefresh) 用于实现下拉刷新功能，也是唯一依赖的库。
+ 
 感谢阅读，欢迎提issue和pr~
