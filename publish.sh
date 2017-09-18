@@ -7,7 +7,7 @@ VERBOSE=false
 # SPEC_REPO: 本地repo的名字。通过 pod repo add $SPEC_REPO $REPO_URL来实现初始化
 # SPEC_PATH：要push上去的podsepc
 # SOURCES：依赖哪些私有repo库
-SOURCES="https://review.byted.org/ss_app_ios_lib_specs,https://github.com/CocoaPods/Specs.git,git@code.byted.org:ugc/UGCSpecs.git"
+SOURCES=""
 SPEC_REPO="LYWebViewController"
 SPEC_PATH="LYWebViewController.podspec"
 
