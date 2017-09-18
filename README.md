@@ -8,7 +8,9 @@
 + SFSafariViewController (entered on iOS 9)
 
 三者对比如下表所示：
-![](https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/diff.png)
+<br/>
+<img src="https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/diff.png" width=450/>
+<br/>
 图2 三者功能对比
 
 目前业界比较推荐的做法是用WKWebView，但WKWebView在使用过程中会有很多坑，于是在尽量patch这些坑的前提下，实现UI和手势自定义，同时为了兼容iOS 8以下的应用，选择同时基于UIWebView和WKWebView封装实现以上功能的webview库，以便项目中方便根据使用场景进行选择。
@@ -48,13 +50,14 @@ WKWebView 提供一个estimatedProgress属性代表页面加载进度，可以�
 UIWebView没有提供可以监听加载进度的属性，因此普遍的实现方式是fake一个进度条，即先慢慢滑到90%，然后等待加载完毕，完毕后瞬间进度到100%，为了方便实现和体验更好一些，可以用NJKWebViewProgress库，原理上也是fake进度进度条的方式。弱网环境下在微信中打开文章，通常是一个白屏但是进度条在推进，最后到80-90%左右卡主如果页面能打卡瞬间滑到100%，如果最终请求超时进度条也不动了，推测也是通过fake实现的。为了减少依赖库，LYWebViewController采用上述思路自己实现。两者效果如下：
 
 WKWebView：
-
-![](https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/progress_wk.gif)
+<br/>
+<img src="https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/progress_wk.gif" width=450/>
+<br/>
 
 UIWebView：
-
-![](https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/progress_ui.gif)
-
+<br/>
+<img src="https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/progress_ui.gif" width=450/>
+<br/>
 
 #### 3. 顶部导航（类似微信的返回、关闭等）& 底部toolbar（仿浏览器）
 原生的UIWebView和WKWebView没有提供导航功能，但是提供了判断是否可以前进后退的函数来封装这些功能。LYWebViewController通过增加导航按钮根据webview提供的canGoBack、goBack、canGoForward、goForward等函数实现顶部导航和底部toolbar导航，同时暴露钩子函数给使用者添加相应逻辑。
@@ -105,7 +108,9 @@ UIWebView：
 
 效果如下：
 
-![](https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/navigation.gif)
+<br/>
+<img src="https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/navigation.gif" width=450/>
+<br/>
 
 #### 4.支持滑动导航
 WKWebView 通过设置allowsBackForwardNavigationGestures属性可以实现右滑回退的功能，非常方便，但是UIWebView不支持，可以通过维护各网页的快照数组结合滑动手势来实现。
@@ -113,8 +118,9 @@ WKWebView 通过设置allowsBackForwardNavigationGestures属性可以实现右�
 
 UIWebView+右滑回退效果如下：
 
-![](https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/swap.gif)
-
+<br/>
+<img src="https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/swap.gif" width=450/>
+<br/>
 
 #### 5. 支持唤起appstore下载
 通常广告主会提供一个带各种下载按钮的H5页面，链接到“https://itunes.apple.com/” 开头的自己应用的页面，但原生WK和UIWebView不支持跳转到appstore，因此在UIWebView提供的“webView: shouldStartLoadWithRequest:navigationType:” 中解析拦截到的url，处理特殊跳转逻辑。（WKWebView是webView:decidePolicyForNavigationAction:decisionHandler:）
@@ -188,12 +194,17 @@ UIWebView+右滑回退效果如下：
 
 效果如下：
 
-![](https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/appstore.gif)
+<br/>
+<img src="https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/appstore.gif" width=450/>
+<br/>
 
 #### 6.记录上一次浏览位置
 微信中打开网页有个很不错的功能，一个很长的网页看到一半关掉，下一次打开会自动跳到上一次看到的位置，非常方便。实现思路：将用户访问的url和每次退出时的页面滚动位置缓存起来，在UIWebView中的页面加载完成回调函数中（webViewDidFinishLoad）根据url查询是否有缓存的位置，有则取出来滚动到相应位置。在UIScrollViewDelegate的scrollViewDidEndDecelerating中实时记录滚动位置更新缓存。
 效果如下(录屏软件bug导致导航文字不清晰)：
-![](https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/remember.gif)
+
+<br/>
+<img src="https://github.com/DoTalkLily/LYWebViewController/blob/master/demo_images/remember.gif" width=450/>
+<br/>
 
 #### 7.下拉刷新
 下拉刷新是来自前端的诉求，基于[MJRefresh](https://github.com/CoderMJLee/MJRefresh)实现，也是LYWebViewController唯一依赖的第三方库，暴露MJRefreshHeader属性，业务方可以根据MJRefresh使用说明设置自定义下拉刷新样式和事件。
