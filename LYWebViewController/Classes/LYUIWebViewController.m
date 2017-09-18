@@ -9,8 +9,9 @@
 #import "LYUIWebViewController.h"
 #import <StoreKit/StoreKit.h>
 #import "LYWebViewControllerActivity.h"
+#import "LYURLCacheUtil.h"
 
-@interface LYUIWebViewController () <UIWebViewDelegate, LYWebViewProgressDelegate, SKStoreProductViewControllerDelegate>
+@interface LYUIWebViewController () <UIWebViewDelegate, UIScrollViewDelegate, LYWebViewProgressDelegate, SKStoreProductViewControllerDelegate>
 {
     BOOL _loading;
 }
@@ -81,12 +82,35 @@
     [self.webView stopLoading];
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
     self.webView.delegate = nil;
+    self.webView.scrollView.delegate = nil;
 }
 
 #pragma mark - Setters
 - (void)setAllowsLinkPreview:(BOOL)allowsLinkPreview
 {
     self.webView.allowsLinkPreview = allowsLinkPreview;
+}
+
+- (void)setTimeoutInternal:(NSTimeInterval)timeoutInternal
+{
+    _timeoutInternal = timeoutInternal;
+    NSMutableURLRequest *request = [self.webView.request mutableCopy];
+    request.timeoutInterval = _timeoutInternal;
+    [self.webView loadRequest:request];
+}
+
+- (void)setCachePolicy:(NSURLRequestCachePolicy)cachePolicy
+{
+    _cachePolicy = cachePolicy;
+    NSMutableURLRequest *request = [self.webView.request mutableCopy];
+    request.cachePolicy = _cachePolicy;
+    [self.webView loadRequest:request];
+}
+
+- (void)setMaxAllowedTitleLength:(NSUInteger)maxAllowedTitleLength
+{
+    _maxAllowedTitleLength = maxAllowedTitleLength;
+    [self _updateTitleOfWebVC];
 }
 
 #pragma mark - Getters
@@ -96,6 +120,7 @@
         _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
         _webView.backgroundColor = [UIColor clearColor];
         _webView.delegate = self;
+        _webView.scrollView.delegate = self;
         _webView.scalesPageToFit = YES;
         [_webView addGestureRecognizer:self.swipePanGesture];
         _webView.translatesAutoresizingMaskIntoConstraints = NO;
@@ -137,30 +162,6 @@
         _swipePanGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(swipePanGestureHandler:)];
     }
     return _swipePanGesture;
-}
-
-#pragma mark - Setter
-
-- (void)setTimeoutInternal:(NSTimeInterval)timeoutInternal
-{
-    _timeoutInternal = timeoutInternal;
-    NSMutableURLRequest *request = [self.webView.request mutableCopy];
-    request.timeoutInterval = _timeoutInternal;
-    [self.webView loadRequest:request];
-}
-
-- (void)setCachePolicy:(NSURLRequestCachePolicy)cachePolicy
-{
-    _cachePolicy = cachePolicy;
-    NSMutableURLRequest *request = [self.webView.request mutableCopy];
-    request.cachePolicy = _cachePolicy;
-    [self.webView loadRequest:request];
-}
-
-- (void)setMaxAllowedTitleLength:(NSUInteger)maxAllowedTitleLength
-{
-    _maxAllowedTitleLength = maxAllowedTitleLength;
-    [self _updateTitleOfWebVC];
 }
 
 #pragma mark - Public
@@ -238,6 +239,16 @@
             [self.progressView setProgress:1.0 animated:YES];
         }
     });
+    
+    //scroll to last read position if there was
+    CGFloat offsetY = 0;
+    offsetY = [[LYURLCacheUtil sharedInstance] getYPositionForURL:self.webView.request.URL.absoluteString];
+    
+    if (offsetY) {
+        [UIView animateWithDuration:0.5 delay:1.5 options:UIViewAnimationOptionCurveEaseIn animations:^{
+            [self.webView.scrollView setContentOffset:CGPointMake(0, offsetY) animated:NO];
+        } completion:^(BOOL finished) {}];
+    }
 }
 
 - (void)didFailLoadWithError:(NSError *)error
@@ -437,6 +448,14 @@
         [webView reload]; return;
     }
     [self didFailLoadWithError:error];
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    CGFloat offsetY =  self.webView.scrollView.contentOffset.y;
+    [[LYURLCacheUtil sharedInstance] insertURL:self.webView.request.URL.absoluteString
+                                     yPosition:offsetY];
 }
 
 #pragma mark - Helper
