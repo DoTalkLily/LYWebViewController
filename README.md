@@ -62,44 +62,44 @@ UIWebView：
 ```
 - (void)goBackClicked:(UIBarButtonItem *)sender
 {
-if (self.delegate && [self.delegate respondsToSelector:@selector(willGoBack)]) {
-[self.delegate willGoBack];
-}
-if ([self.webView canGoBack]) {
-[self.webView goBack];
-}
+    if (self.delegate && [self.delegate respondsToSelector:@selector(willGoBack)]) {
+        [self.delegate willGoBack];
+    }
+    if ([self.webView canGoBack]) {
+        [self.webView goBack];
+    }
 }
 - (void)goForwardClicked:(UIBarButtonItem *)sender
 {
-if (self.delegate && [self.delegate respondsToSelector:@selector(willGoForward)]) {
-[self.delegate willGoForward];
-}
-if ([self.webView canGoForward]) {
-[self.webView goForward];
-}
+    if (self.delegate && [self.delegate respondsToSelector:@selector(willGoForward)]) {
+        [self.delegate willGoForward];
+    }
+    if ([self.webView canGoForward]) {
+        [self.webView goForward];
+    }
 }
 - (void)reloadClicked:(UIBarButtonItem *)sender
 {
-if (self.delegate && [self.delegate respondsToSelector:@selector(willReload)]) {
-[self.delegate willReload];
-}
-[self.webView reload];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(willReload)]) {
+        [self.delegate willReload];
+    }
+    [self.webView reload];
 }
 - (void)stopClicked:(UIBarButtonItem *)sender
 {
-if (self.delegate && [self.delegate respondsToSelector:@selector(willStop)]) {
-[self.delegate willStop];
-}
-[self.webView stopLoading];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(willStop)]) {
+        [self.delegate willStop];
+    }
+    [self.webView stopLoading];
 }
 
 - (void)navigationItemHandleBack:(UIBarButtonItem *)sender
 {
-if ([self.webView canGoBack]) {
-[self.webView goBack];
-return;
-}
-[self.navigationController popViewControllerAnimated:YES];
+    if ([self.webView canGoBack]) {
+        [self.webView goBack];
+        return;
+    }
+    [self.navigationController popViewControllerAnimated:YES];
 }
 ```
 
@@ -123,44 +123,65 @@ UIWebView+右滑回退效果如下：
 #pragma mark - UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-if ([request.URL.absoluteString isEqualToString:kLY404NotFoundURLKey] ||
-[request.URL.absoluteString isEqualToString:kLYNetworkErrorURLKey]) {
-[self loadURL:self.URL];
-return NO;
+    if ([request.URL.absoluteString isEqualToString:kLY404NotFoundURLKey] ||
+        [request.URL.absoluteString isEqualToString:kLYNetworkErrorURLKey]) {
+        [self loadURL:self.URL];
+        return NO;
+    }
+    
+    NSURLComponents *components = [[NSURLComponents alloc] initWithString:request.URL.absoluteString];
+    // For appstore.
+    if ([[NSPredicate predicateWithFormat:@"SELF BEGINSWITH[cd] 'https://itunes.apple.com/' OR SELF BEGINSWITH[cd] 'mailto:' OR SELF BEGINSWITH[cd] 'tel:' OR SELF BEGINSWITH[cd] 'telprompt:'"] evaluateWithObject:request.URL.absoluteString]) {
+        if ([[NSPredicate predicateWithFormat:@"SELF BEGINSWITH[cd] 'https://itunes.apple.com/'"] evaluateWithObject:components.URL.absoluteString] && !self.reviewsAppInAppStore) {
+            SKStoreProductViewController *productVC = [[SKStoreProductViewController alloc] init];
+            productVC.delegate = self;
+            NSError *error;
+            NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:@"id[1-9]\\d*" options:NSRegularExpressionCaseInsensitive error:&error];
+            NSTextCheckingResult *result = [regex firstMatchInString:components.URL.absoluteString options:NSMatchingReportCompletion range:NSMakeRange(0, components.URL.absoluteString.length)];
+            
+            if (!error && result) {
+                NSRange range = NSMakeRange(result.range.location+2, result.range.length-2);
+                [productVC loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier: @([[components.URL.absoluteString substringWithRange:range] integerValue])} completionBlock:^(BOOL result, NSError * _Nullable error) {
+                }];
+                [self presentViewController:productVC animated:YES completion:NULL];
+                return NO;
+            }
+        }
+        if ([[UIApplication sharedApplication] canOpenURL:request.URL]) {
+            if (UIDevice.currentDevice.systemVersion.floatValue >= 10.0){
+                [UIApplication.sharedApplication openURL:request.URL options:@{} completionHandler:NULL];
+            } else {
+                [[UIApplication sharedApplication] openURL:request.URL];
+            }
+        }
+        return NO;
+    } else if (![[NSPredicate predicateWithFormat:@"SELF MATCHES[cd] 'https' OR SELF MATCHES[cd] 'http' OR SELF MATCHES[cd] 'file' OR SELF MATCHES[cd] 'about'"] evaluateWithObject:components.scheme]) {// For any other schema.
+        if ([[UIApplication sharedApplication] canOpenURL:request.URL]) {
+            if (UIDevice.currentDevice.systemVersion.floatValue >= 10.0) {
+                [UIApplication.sharedApplication openURL:request.URL options:@{} completionHandler:NULL];
+            } else {
+                [[UIApplication sharedApplication] openURL:request.URL];
+            }
+        }
+        return NO;
+    }
+    
+    if (navigationType == UIWebViewNavigationTypeLinkClicked ||
+        navigationType == UIWebViewNavigationTypeFormSubmitted ||
+        navigationType == UIWebViewNavigationTypeOther) {
+        [self pushCurrentSnapshotViewWithRequest:request];
+    }
+    
+    if (self.navigationType == LYWebViewControllerNavigationBarItem) {
+        [self updateNavigationItems];
+    }
+    
+    if (self.navigationType == LYWebViewControllerNavigationToolItem) {
+        [self updateToolbarItems];
+    }
+    return YES;
 }
 
-NSURLComponents *components = [[NSURLComponents alloc] initWithString:request.URL.absoluteString];
-// For appstore.
-if ([[NSPredicate predicateWithFormat:@"SELF BEGINSWITH[cd] 'https://itunes.apple.com/' OR SELF BEGINSWITH[cd] 'mailto:' OR SELF BEGINSWITH[cd] 'tel:' OR SELF BEGINSWITH[cd] 'telprompt:'"] evaluateWithObject:request.URL.absoluteString]) {
-if ([[NSPredicate predicateWithFormat:@"SELF BEGINSWITH[cd] 'https://itunes.apple.com/'"] evaluateWithObject:components.URL.absoluteString] && !self.reviewsAppInAppStore) {
-// 在当前controller中跳转到appstore页面的
-SKStoreProductViewController *productVC = [[SKStoreProductViewController alloc] init];
-productVC.delegate = self;
-NSError *error;
-NSRegularExpression *regex = [[NSRegularExpression alloc] initWithPattern:@"id[1-9]\\d*" options:NSRegularExpressionCaseInsensitive error:&error];
-NSTextCheckingResult *result = [regex firstMatchInString:components.URL.absoluteString options:NSMatchingReportCompletion range:NSMakeRange(0, components.URL.absoluteString.length)];
-
-if (!error && result) {
-NSRange range = NSMakeRange(result.range.location+2, result.range.length-2);
-[productVC loadProductWithParameters:@{SKStoreProductParameterITunesItemIdentifier: @([[components.URL.absoluteString substringWithRange:range] integerValue])} completionBlock:^(BOOL result, NSError * _Nullable error) {
-}];
-[self presentViewController:productVC animated:YES completion:NULL];
-return NO;
-}
-}
-// 试着用对应的应用打开
-if ([[UIApplication sharedApplication] canOpenURL:request.URL]) {
-if (UIDevice.currentDevice.systemVersion.floatValue >= 10.0){
-[UIApplication.sharedApplication openURL:request.URL options:@{} completionHandler:NULL];
-} else {
-[[UIApplication sharedApplication] openURL:request.URL];
-}
-}
-return NO;
-} 
-
-return YES;
-}
 ```
 
 可以实现跳转到appstore（手机中的appstore应用）或者在页面内打开appstore，以及打开邮件应用，打电话等。
