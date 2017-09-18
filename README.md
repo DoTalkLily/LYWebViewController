@@ -7,7 +7,7 @@
 在Podfile中加一行：  
 ```
  target 'MyApp' do
-    pod 'LYWebViewController', '~> 0.1'
+    pod 'LYWebViewController', '~> 0.2'
  -end
 ```
 然后pod install
