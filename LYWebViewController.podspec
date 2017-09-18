@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LYWebViewController'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'A solution for iOS WebView.'
   s.description      = <<-DESC
                        A solution for iOS WebView. It provides JSBridge and off-line resoure support for both UIWebView and WKWebView.
