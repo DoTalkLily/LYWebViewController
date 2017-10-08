@@ -31,13 +31,18 @@
 
 - (instancetype)initWithAddress:(NSString *)urlString
 {
-    return [self initWithURL:[NSURL URLWithString:urlString]];
+    if (self = [self init]) {
+        NSString *urlStr = [self.class encodeWithURL:urlString];
+        _URL = [NSURL URLWithString:urlStr];
+    }
+    return self;
 }
 
 - (instancetype)initWithURL:(NSURL*)pageURL
 {
     if(self = [self init]) {
-        _URL = pageURL;
+        NSString *urlStr = [self.class encodeWithURL:pageURL.absoluteString];
+        _URL = [NSURL URLWithString:urlStr];
     }
     return self;
 }
@@ -45,7 +50,8 @@
 - (instancetype)initWithRequest:(NSURLRequest *)request
 {
     if (self = [self init]) {
-        _request = request;
+        NSString *urlStr = [self.class encodeWithURL:request.URL.absoluteString];
+        _request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
     }
     return self;
 }
@@ -53,8 +59,9 @@
 - (instancetype)initWithHTMLString:(NSString *)HTMLString baseURL:(NSURL *)baseURL
 {
     if (self = [self init]) {
+        NSString *urlStr = [self.class encodeWithURL:baseURL.absoluteString];
         _HTMLString = HTMLString;
-        _baseURL = baseURL;
+        _baseURL = [NSURL URLWithString:urlStr];
     }
     return self;
 }
@@ -355,4 +362,13 @@
 
 - (void)navigationItemHandleBack:(UIBarButtonItem *)sender {}
 
+#pragma mark - helper
++ (NSString *)encodeWithURL:(NSString *)URLString
+{
+//    CFStringRef escaped = CFURLCreateStringByAddingPercentEscapes(NULL, (CFStringRef)URLString, NULL, (CFStringRef)@"!*'();:@&=+$,/?%#[]",kCFStringEncodingUTF8);
+//    NSString *encodedString = [NSString stringWithString:(__bridge NSString *)escaped];
+//    CFRelease(escaped);//记得释放
+//    return encodedString;
+    return [URLString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+}
 @end

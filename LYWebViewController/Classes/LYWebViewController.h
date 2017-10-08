@@ -65,6 +65,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)clearWebCacheCompletion:(dispatch_block_t _Nullable)completion;
 
++ (NSString *)encodeWithURL:(NSString *)URLString;
+
 @end
 
 @interface LYWebViewController()
