@@ -11,10 +11,9 @@
 		14007C231F55C6C00095B106 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14007C201F55C6C00095B106 /* TableViewController.m */; };
 		14007C251F55C6DA0095B106 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 14007C241F55C6DA0095B106 /* main.m */; };
 		14007C271F55C6FA0095B106 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14007C261F55C6FA0095B106 /* Assets.xcassets */; };
-		14B6A27D1F682A20003DD70C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B6A2791F682A20003DD70C /* LaunchScreen.storyboard */; };
-		14B6A27E1F682A20003DD70C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14B6A27B1F682A20003DD70C /* Main.storyboard */; };
+		1426A0381F8C714D00795E0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1426A0341F8C714D00795E0D /* LaunchScreen.storyboard */; };
+		1426A0391F8C714D00795E0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1426A0361F8C714D00795E0D /* Main.storyboard */; };
 		14F83FC11F5FF1BF003D4F28 /* iOS_Core_Animation_Advanced_Techniques.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14F83FC01F5FF1BF003D4F28 /* iOS_Core_Animation_Advanced_Techniques.pdf */; };
-		14F83FE01F6125B9003D4F28 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14F83FDF1F6125B9003D4F28 /* Info.plist */; };
 		423E432091D16570F329F9A9 /* libPods-LYWebViewController.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 862A3F73F7366D5C45141B91 /* libPods-LYWebViewController.a */; };
 /* End PBXBuildFile section */
 
@@ -26,8 +25,8 @@
 		14007C241F55C6DA0095B106 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LYWebViewController/main.m; sourceTree = SOURCE_ROOT; };
 		14007C261F55C6FA0095B106 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = LYWebViewController/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		1419E0F31F52CCB6000AC3BE /* LYWebViewController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LYWebViewController.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		14B6A27A1F682A20003DD70C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LYWebViewController/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		14B6A27C1F682A20003DD70C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LYWebViewController/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		1426A0351F8C714D00795E0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LYWebViewController/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		1426A0371F8C714D00795E0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LYWebViewController/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		14F83FC01F5FF1BF003D4F28 /* iOS_Core_Animation_Advanced_Techniques.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = iOS_Core_Animation_Advanced_Techniques.pdf; sourceTree = SOURCE_ROOT; };
 		14F83FDF1F6125B9003D4F28 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = LYWebViewController/Info.plist; sourceTree = SOURCE_ROOT; };
 		7B6C97C8F6755E1B8FC917CD /* Pods-LYWebViewController.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LYWebViewController.release.xcconfig"; path = "Pods/Target Support Files/Pods-LYWebViewController/Pods-LYWebViewController.release.xcconfig"; sourceTree = "<group>"; };
@@ -69,8 +68,8 @@
 		1419E0F51F52CCB6000AC3BE /* LYWebViewController */ = {
 			isa = PBXGroup;
 			children = (
-				14B6A2791F682A20003DD70C /* LaunchScreen.storyboard */,
-				14B6A27B1F682A20003DD70C /* Main.storyboard */,
+				1426A0341F8C714D00795E0D /* LaunchScreen.storyboard */,
+				1426A0361F8C714D00795E0D /* Main.storyboard */,
 				14F83FDF1F6125B9003D4F28 /* Info.plist */,
 				14F83FC01F5FF1BF003D4F28 /* iOS_Core_Animation_Advanced_Techniques.pdf */,
 				14007C261F55C6FA0095B106 /* Assets.xcassets */,
@@ -172,11 +171,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1426A0381F8C714D00795E0D /* LaunchScreen.storyboard in Resources */,
 				14007C271F55C6FA0095B106 /* Assets.xcassets in Resources */,
-				14B6A27E1F682A20003DD70C /* Main.storyboard in Resources */,
-				14B6A27D1F682A20003DD70C /* LaunchScreen.storyboard in Resources */,
-				14F83FE01F6125B9003D4F28 /* Info.plist in Resources */,
 				14F83FC11F5FF1BF003D4F28 /* iOS_Core_Animation_Advanced_Techniques.pdf in Resources */,
+				1426A0391F8C714D00795E0D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,18 +249,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		14B6A2791F682A20003DD70C /* LaunchScreen.storyboard */ = {
+		1426A0341F8C714D00795E0D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				14B6A27A1F682A20003DD70C /* Base */,
+				1426A0351F8C714D00795E0D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		14B6A27B1F682A20003DD70C /* Main.storyboard */ = {
+		1426A0361F8C714D00795E0D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				14B6A27C1F682A20003DD70C /* Base */,
+				1426A0371F8C714D00795E0D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
