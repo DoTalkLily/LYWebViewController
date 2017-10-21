@@ -164,6 +164,21 @@
         } else if ([UIDevice currentDevice].systemVersion.floatValue >= 8.0 && [config respondsToSelector:@selector(setMediaPlaybackRequiresUserAction:)]) {
             [config setMediaPlaybackRequiresUserAction:NO];
         }
+        
+        //取出 storage 中的cookie并将其拼接成正确的形式
+        NSArray<NSHTTPCookie *> *tmp = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies];
+        NSMutableString *jscode_Cookie = [@"" mutableCopy];
+        [tmp enumerateObjectsUsingBlock:^(NSHTTPCookie * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSLog(@"%@=%@", obj.name, obj.value);
+            [jscode_Cookie appendString:[NSString stringWithFormat:@"document.cookie='%@=%@';", obj.name, obj.value]];
+        }];
+        
+        WKUserContentController* userContentController = WKUserContentController.new;
+        WKUserScript * cookieScript = [[WKUserScript alloc] initWithSource: @"" injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
+        
+        [userContentController addUserScript:cookieScript];
+        WKWebViewConfiguration* webViewConfig = WKWebViewConfiguration.new;
+        webViewConfig.userContentController = userContentController;
     }
     
     _webView = [[WKWebView alloc] initWithFrame:CGRectZero configuration:config];
@@ -233,12 +248,20 @@
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:pageURL];
     request.timeoutInterval = _timeoutInternal;
     request.cachePolicy = _cachePolicy;
+    NSString *cookie = [self readCurrentCookie];
+    if (cookie && cookie.length != 0) {
+        [request setValue:cookie forHTTPHeaderField:@"Cookie"];
+    }
     _navigation = [self.webView loadRequest:request];
 }
 
 - (void)loadURLRequest:(NSURLRequest *)request
 {
     NSMutableURLRequest *_request = [request mutableCopy];
+    NSString *cookie = [self readCurrentCookie];
+    if (cookie && cookie.length != 0) {
+        [_request setValue:cookie forHTTPHeaderField:@"Cookie"];
+    }
     _navigation = [self.webView loadRequest:_request];
 }
 
@@ -290,9 +313,11 @@
 
 - (void)didFailLoadWithError:(NSError *)error{
     if (error.code == NSURLErrorCannotFindHost) {// 404
-        [self loadURL:[NSURL fileURLWithPath:kLY404NotFoundHTMLPath]];
+        NSURL *URL = [NSURL fileURLWithPath:kLY404NotFoundHTMLPath];
+        [self loadURL:URL];
     } else {
-        [self loadURL:[NSURL fileURLWithPath:kLYNetworkErrorHTMLPath]];
+        NSURL *URL = [NSURL fileURLWithPath:kLYNetworkErrorHTMLPath];
+        [self loadURL:URL];
     }
 
     self.backgroundLabel.text = [NSString stringWithFormat:@"%@%@",LYWebViewControllerLocalizedString(@"load failed:", nil) , error.localizedDescription];
@@ -472,6 +497,12 @@
 }
 #pragma mark - WKNavigationDelegate
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
+    // URL actions for 404 and Errors:
+    if ([navigationAction.request.URL.absoluteString rangeOfString:kLY404NotFoundURLKey].location != NSNotFound || [navigationAction.request.URL.absoluteString rangeOfString:kLYNetworkErrorURLKey].location != NSNotFound) {
+        decisionHandler(WKNavigationActionPolicyCancel);
+        return;
+    }
+    
     // Disable all the '_blank' target in page's target.
     if (!navigationAction.targetFrame.isMainFrame) {
         [webView evaluateJavaScript:@"var a = document.getElementsByTagName('a');for(var i=0;i<a.length;i++){a[i].setAttribute('target','');}" completionHandler:nil];
@@ -508,11 +539,6 @@
         return;
     }
     
-    // URL actions for 404 and Errors:
-    if ([navigationAction.request.URL.absoluteString isEqualToString:kLY404NotFoundURLKey] || [navigationAction.request.URL.absoluteString isEqualToString:kLYNetworkErrorURLKey]) {
-        // Reload the original URL.
-        [self loadURL:self.URL];
-    }
     // Update the items.
     if (self.navigationType == LYWebViewControllerNavigationBarItem) {
         [self updateNavigationItems];
@@ -526,6 +552,11 @@
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler
 {
+    NSHTTPURLResponse *response = (NSHTTPURLResponse *)navigationResponse.response;
+    NSArray *cookies =[NSHTTPCookie cookiesWithResponseHeaderFields:[response allHeaderFields] forURL:response.URL];
+    for (NSHTTPCookie *cookie in cookies) {
+        [[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookie:cookie];
+    }
     decisionHandler(WKNavigationResponsePolicyAllow);
 }
 
@@ -557,9 +588,10 @@
 //        [webView reloadFromOrigin];
 //        return;
 //    }
-//    [self didFailLoadWithError:error];
+    [self didFailLoadWithError:error];
 }
 
+//WKWebView 上当总体的内存占用比较大的时候，WebContent Process 会 crash，出现白屏现象
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_9_0
 - (void)webViewWebContentProcessDidTerminate:(WKWebView *)webView
 {
@@ -585,6 +617,22 @@
 }
 
 #pragma mark - Helper
+-(NSString *)readCurrentCookie{
+    NSMutableDictionary *cookieDic = [NSMutableDictionary dictionary];
+    NSMutableString *cookieValue = [NSMutableString stringWithFormat:@""];
+    NSHTTPCookieStorage *cookieJar = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie *cookie in [cookieJar cookies]) {
+        [cookieDic setObject:cookie.value forKey:cookie.name];
+    }
+    
+    // cookie重复，先放到字典进行去重，再进行拼接
+    for (NSString *key in cookieDic) {
+        NSString *appendString = [NSString stringWithFormat:@"%@=%@;", key, [cookieDic valueForKey:key]];
+        [cookieValue appendString:appendString];
+    }
+    return cookieValue;
+}
+
 - (void)_updateTitleOfWebVC
 {
     NSString *title = self.title;

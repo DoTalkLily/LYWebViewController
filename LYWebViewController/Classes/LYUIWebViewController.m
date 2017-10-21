@@ -254,9 +254,11 @@
 - (void)didFailLoadWithError:(NSError *)error
 {
     if (error.code == NSURLErrorCannotFindHost) {// 404
-        [self loadURL:[NSURL fileURLWithPath:kLY404NotFoundHTMLPath]];
+        self.URL = [NSURL fileURLWithPath:kLY404NotFoundHTMLPath];
+        [self loadURL:self.URL];
     } else {
-        [self loadURL:[NSURL fileURLWithPath:kLYNetworkErrorHTMLPath]];
+        self.URL = [NSURL fileURLWithPath:kLYNetworkErrorHTMLPath];
+        [self loadURL:self.URL];
     }
     
     self.backgroundLabel.text = [NSString stringWithFormat:@"%@%@",LYWebViewControllerLocalizedString(@"load failed:", nil) , error.localizedDescription];
@@ -373,9 +375,8 @@
 #pragma mark - UIWebViewDelegate
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
-    if ([request.URL.absoluteString isEqualToString:kLY404NotFoundURLKey] ||
-        [request.URL.absoluteString isEqualToString:kLYNetworkErrorURLKey]) {
-        [self loadURL:self.URL];
+    if ([request.URL.absoluteString rangeOfString:kLY404NotFoundURLKey].location != NSNotFound ||
+        [request.URL.absoluteString rangeOfString:kLYNetworkErrorURLKey].location != NSNotFound) {
         return NO;
     }
     
@@ -444,9 +445,9 @@
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
 {
-    if (error.code == NSURLErrorCancelled) {
-        [webView reload]; return;
-    }
+//    if (error.code == NSURLErrorCancelled) {
+//        [webView reload]; return;
+//    }
     [self didFailLoadWithError:error];
 }
 

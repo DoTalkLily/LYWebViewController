@@ -21,8 +21,8 @@ NSLocalizedStringFromTableInBundle(key, @"LYWebViewController",  [NSBundle bundl
 #endif
 
 /// URL key for 404 not found page.
-static NSString *const kLY404NotFoundURLKey = @"ly_404_not_found";
+static NSString *const kLY404NotFoundURLKey = @"html.bundle/404.html";
 /// URL key for network error page.
-static NSString *const kLYNetworkErrorURLKey = @"ly_network_error";
+static NSString *const kLYNetworkErrorURLKey = @"html.bundle/neterror.html";
 /// Tag value for container view.
 static NSUInteger const kContainerViewTag = 0x893147;
